@@ -53,14 +53,21 @@ window.onload=function(){
             menuBtn.addEventListener("click",()=>{
             document.getElementById("menu_area").style.bottom="0";
             document.getElementById("menu_area").style.height="100%";
+            setTimeout(()=>{
+                document.getElementsByClassName("menu_title")[0].classList.add("active");
+            },700)
+            setTimeout(()=>{
+                document.getElementsByClassName("menuBox")[0].classList.add("active")
+            },1600)
+            
         });
     }
     
-    if(closed){
-        closed.addEventListener("click",()=>{
-            document.getElementById("menu_area").style.bottom="100%";  
-            });
-    }
+    // if(closed){
+    //     closed.addEventListener("click",()=>{
+    //         document.getElementById("menu_area").style.bottom="100%";  
+    //         });
+    // }
     
        
 }
@@ -71,9 +78,17 @@ window.onload=function(){
     // }
 
     
-    // function closefn(){
-    //     document.getElementById("menu_area").style.bottom="100%";
-    // }
+    function closefn(){
+        document.getElementsByClassName("menuBox")[0].classList.remove("active")
+        setTimeout(()=>{
+            document.getElementsByClassName("menu_title")[0].classList.remove("active");
+        },800);
+        setTimeout(()=>{
+            document.getElementById("menu_area").style.bottom="100%";
+            
+        },1600)
+        
+    }
 
     let navDoM =document.getElementById("nav");
     function getNav(){
